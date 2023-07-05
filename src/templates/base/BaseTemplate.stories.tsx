@@ -1,19 +1,19 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import BaseTemplate, { IBaseTemplate } from './BaseTemplate';
-import { BaseTemplateData } from './BaseTemplate.data';
+import type { Meta, StoryObj } from '@storybook/react';
+import BaseTemplate from './BaseTemplate';
+import { baseTemplateData } from './BaseTemplate.data';
 
-export default {
+const meta: Meta<typeof BaseTemplate> = {
   title: 'templates/BaseTemplate',
   component: BaseTemplate,
+  tags: ['autodocs'],
   argTypes: {}
-} as ComponentMeta<typeof BaseTemplate>;
+};
 
-const Template: ComponentStory<typeof BaseTemplate> = args => (
-  <BaseTemplate {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof BaseTemplate>;
 
-export const Base = Template.bind({});
-
-Base.args = {
-  ...BaseTemplateData.base
-} as IBaseTemplate;
+export const Base: Story = {
+  args: {
+    ...baseTemplateData.base
+  }
+};

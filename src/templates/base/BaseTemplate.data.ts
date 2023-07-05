@@ -4,6 +4,6 @@ const base: IBaseTemplate = {
   sampleTextProp: 'Hello world!'
 };
 
-export const BaseTemplateData = {
+export const baseTemplateData = {
   base
 };
