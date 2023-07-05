@@ -1,0 +1,50 @@
+{
+  "name": "template-app",
+  "version": "0.1.0",
+  "description": "Template para apps em Next.js c/ TypeScript",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "next": "13.4.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.6",
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@storybook/addon-actions": "^7.0.25",
+    "@storybook/addon-essentials": "^7.0.25",
+    "@storybook/addon-interactions": "^7.0.25",
+    "@storybook/addon-links": "^7.0.25",
+    "@storybook/nextjs": "^7.1.0-alpha.44",
+    "@storybook/react": "^7.0.25",
+    "@storybook/testing-library": "^0.2.0",
+    "@types/node": "20.3.3",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.8.1",
+    "eslint": "8.44.0",
+    "eslint-config-next": "13.4.8",
+    "eslint-plugin-storybook": "^0.6.12",
+    "husky": "^8.0.3",
+    "postcss": "^8.4.24",
+    "prettier": "^2.8.8",
+    "storybook": "^7.0.25",
+    "tailwindcss": "^3.3.2",
+    "typescript": "5.1.6"
+  }
+}
