@@ -1,0 +1,12 @@
+.container {
+  margin: 0.5rem 0;
+}
+
+.container label {
+  display: flex;
+  align-items: center;
+}
+
+.container label input {
+  margin-right: 0.5rem;
+}
