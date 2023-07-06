@@ -89,7 +89,7 @@ const Home: NextPageWithLayout = () => {
         searchText={searchText}
         handleSearchTextChange={handleSearchTextChange}
         handleCheckboxChange={handleCheckboxChange}
-        filters={filters}
+        filtersState={filters}
       />
       <section className={styles.main}>
         <button

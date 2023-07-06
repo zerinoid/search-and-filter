@@ -3,10 +3,10 @@ import styles from './Filter.module.css';
 import { SetStateAction, Dispatch } from 'react';
 import SearchBox from '@/components/inputs/search-box/SearchBox';
 import CheckboxToggle from '@/components/inputs/checkbox-toggle/CheckboxToggle';
+import { filterData } from './Filter.data';
 
 export interface IFilter {
   isOpen: boolean;
-  setIsOpen?: Dispatch<SetStateAction<boolean>>;
   searchText: string;
   handleSearchTextChange: (text: string) => void;
   handleCheckboxChange: (
@@ -14,47 +14,42 @@ export interface IFilter {
     value: string,
     checked: boolean
   ) => void;
-  filters: Record<string, Set<string | number>>;
+  filtersState: Record<string, Set<string | number>>;
 }
 
 const Filter: React.FC<IFilter> = ({
   isOpen,
-  setIsOpen,
   searchText,
   handleSearchTextChange,
   handleCheckboxChange,
-  filters
+  filtersState
 }) => {
+  const filters = filterData.base;
   return (
     <div className={styles.container} style={{ left: isOpen ? '0' : '-100%' }}>
       <div className={styles.input}>
         <SearchBox value={searchText} onChange={handleSearchTextChange} />
       </div>
-
-      <CheckboxToggle
-        value="planning"
-        label="Planning"
-        checked={filters.status.has('planning')}
-        onChange={checked =>
-          handleCheckboxChange('status', 'planning', checked)
-        }
-      />
-
-      <CheckboxToggle
-        value="inprogress"
-        label="In Progress"
-        checked={filters.status.has('inprogress')}
-        onChange={checked =>
-          handleCheckboxChange('status', 'inprogress', checked)
-        }
-      />
-
-      <CheckboxToggle
-        value="done"
-        label="Done"
-        checked={filters.status.has('done')}
-        onChange={checked => handleCheckboxChange('status', 'done', checked)}
-      />
+      {filters.map(filterGroup => (
+        <div key={filterGroup.groupName}>
+          <p>{filterGroup.groupName}</p>
+          {filterGroup.filters.map(filter => (
+            <CheckboxToggle
+              key={filter.value}
+              value={filter.value}
+              label={filter.label}
+              checked={filtersState[filterGroup.groupName].has(filter.value)}
+              onChange={checked =>
+                handleCheckboxChange(
+                  filterGroup.groupName,
+                  filter.value,
+                  checked
+                )
+              }
+            />
+          ))}
+        </div>
+      ))}
     </div>
   );
 };
