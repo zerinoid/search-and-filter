@@ -1,8 +1,7 @@
 import Image, { ImageLoaderProps } from 'next/image';
-import { galleryData } from './Gallery.data';
 import styles from './Gallery.module.css';
 
-export type statuses = 'done' | 'planning' | 'running';
+export type statuses = 'done' | 'planning' | 'inprogress';
 type areas = 'Architecture' | 'Music' | 'Painting' | 'Poetry' | 'Cinema';
 type programs = 'Endorsement' | 'Internship' | 'Scholarship' | 'Integration';
 
@@ -19,9 +18,11 @@ export interface IProject {
   program: programs;
 }
 
-const Gallery: React.FC = () => {
-  const projects = galleryData.projects;
+export interface IGallery {
+  projects: IProject[];
+}
 
+const Gallery: React.FC<IGallery> = ({ projects }) => {
   const imageLoader = ({ src, width }: ImageLoaderProps) => {
     return `https://via.placeholder.com/${width}x${width / 1.777}?text=${src}`;
   };
