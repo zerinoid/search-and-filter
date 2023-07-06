@@ -1,0 +1,50 @@
+import Image, { ImageLoaderProps } from 'next/image';
+import { galleryData } from './Gallery.data';
+import styles from './Gallery.module.css';
+
+export type statuses = 'done' | 'planning' | 'running';
+type areas = 'Architecture' | 'Music' | 'Painting' | 'Poetry' | 'Cinema';
+type programs = 'Endorsement' | 'Internship' | 'Scholarship' | 'Integration';
+
+export interface IProject {
+  id: number;
+  title: string;
+  responsible: string;
+  manager: string;
+  description: string;
+  status: statuses;
+  year: number;
+  rating: 1 | 2 | 3 | 4 | 5;
+  area: areas;
+  program: programs;
+}
+
+const Gallery: React.FC = () => {
+  const projects = galleryData.projects;
+
+  const imageLoader = ({ src, width }: ImageLoaderProps) => {
+    return `https://via.placeholder.com/${width}x${width / 1.777}?text=${src}`;
+  };
+
+  return (
+    <div className={styles.container}>
+      {projects.map(image => (
+        <div className={styles.item} key={image.id}>
+          <Image
+            loader={imageLoader}
+            src={image.title}
+            alt={image.title}
+            width={300}
+            height={200}
+          />
+          <h2>{image.title}</h2>
+          <p>{image.responsible}</p>
+          <p>{image.manager}</p>
+          <p>{image.description}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Gallery;
