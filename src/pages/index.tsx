@@ -13,8 +13,8 @@ const Home: NextPageWithLayout = () => {
     status: new Set(),
     approvalYear: new Set(),
     enterprise: new Set(),
-    areas: new Set(),
-    programs: new Set()
+    area: new Set(),
+    program: new Set()
   });
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const [searchText, setSearchText] = useState<string>('');
@@ -61,10 +61,10 @@ const Home: NextPageWithLayout = () => {
     ) {
       return false;
     }
-    if (filters.areas.size > 0 && !filters.areas.has(project.area)) {
+    if (filters.area.size > 0 && !filters.area.has(project.area)) {
       return false;
     }
-    if (filters.programs.size > 0 && !filters.programs.has(project.program)) {
+    if (filters.program.size > 0 && !filters.program.has(project.program)) {
       return false;
     }
     // Filter by search text
