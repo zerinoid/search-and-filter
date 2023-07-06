@@ -1,10 +1,18 @@
 .nav {
   display: flex;
-  flex-direction: column;
+  position: fixed;
   width: 250px;
+  top: 0;
+  left: -100%;
+  flex-direction: column;
   background-color: #fafafa;
   padding: 32px;
   border-right: 1px solid #eaeaea;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @media screen(md) {
+    position: static;
+  }
 }
 
 .nav>a {

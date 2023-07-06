@@ -1,8 +1,10 @@
 import Head from 'next/head';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import styles from './PrimaryLayout.module.css';
 import { Inter } from 'next/font/google';
 import Filter from '../../sections/filter/Filter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,6 +17,8 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
   children,
   title = 'Sample Title'
 }) => {
+  const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
+  const icon = isFilterOpen ? faXmark : faBars;
   return (
     <>
       <Head>
@@ -39,7 +43,13 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         <title>{title}</title>
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Filter />
+        <button
+          className="fixed top-2 left-2 z-10 md:hidden"
+          onClick={() => setIsFilterOpen(isOpen => !isOpen)}
+        >
+          <FontAwesomeIcon icon={icon} size="xl" />
+        </button>
+        <Filter isOpen={isFilterOpen} />
         {children}
       </main>
     </>
