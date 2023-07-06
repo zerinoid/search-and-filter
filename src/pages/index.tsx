@@ -19,7 +19,7 @@ export default Home;
 
 Home.getLayout = page => {
   return (
-    <PrimaryLayout>
+    <PrimaryLayout title="Search and Filter">
       <SidebarLayout />
       {page}
     </PrimaryLayout>
