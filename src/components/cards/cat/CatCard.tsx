@@ -1,5 +1,8 @@
 import styles from './CatCard.module.css';
 import Image from 'next/image';
+import { Quicksand } from 'next/font/google';
+
+const quicksand = Quicksand({ subsets: ['latin'] });
 
 export interface ICatCard {
   tag: string;
@@ -11,7 +14,7 @@ export interface ICatCard {
 
 const CatCard: React.FC<ICatCard> = ({ tag, title, body, author, time }) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${quicksand.className}`}>
       <div className={styles.card}>
         <div className={styles.card__header}>
           <Image

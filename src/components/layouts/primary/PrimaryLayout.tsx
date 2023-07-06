@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import { ReactElement } from 'react';
 import styles from './PrimaryLayout.module.css';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export interface IPrimaryLayout {
   children: ReactElement | ReactElement[];
@@ -34,7 +37,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         <link rel="manifest" href="/site.webmanifest" />
         <title>{title}</title>
       </Head>
-      <main className={styles.main}>{children}</main>
+      <main className={`${styles.main} ${inter.className}`}>{children}</main>
     </>
   );
 };
