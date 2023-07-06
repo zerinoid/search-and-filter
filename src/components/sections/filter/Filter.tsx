@@ -1,7 +1,11 @@
 import Link from 'next/link';
-import styles from './SidebarLayout.module.css';
+import styles from './Filter.module.css';
 
-const SidebarLayout: React.FC = () => {
+export interface IFilter {
+  sampleTextProp: string;
+}
+
+const Filter: React.FC<IFilter> = ({ sampleTextProp }) => {
   return (
     <nav className={styles.nav}>
       <input className={styles.input} placeholder="Search..." />
@@ -12,4 +16,4 @@ const SidebarLayout: React.FC = () => {
   );
 };
 
-export default SidebarLayout;
+export default Filter;
