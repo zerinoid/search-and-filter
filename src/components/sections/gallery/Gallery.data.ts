@@ -9,7 +9,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'done',
     year: 2021,
-    rating: 3,
+    score: 3,
     area: 'Architecture',
     program: 'Endorsement'
   },
@@ -21,7 +21,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'planning',
     year: 2022,
-    rating: 4,
+    score: 4,
     area: 'Music',
     program: 'Internship'
   },
@@ -33,7 +33,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'inprogress',
     year: 2020,
-    rating: 2,
+    score: 2,
     area: 'Painting',
     program: 'Scholarship'
   },
@@ -45,7 +45,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'done',
     year: 2019,
-    rating: 5,
+    score: 5,
     area: 'Poetry',
     program: 'Integration'
   },
@@ -57,7 +57,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'planning',
     year: 2023,
-    rating: 1,
+    score: 1,
     area: 'Cinema',
     program: 'Endorsement'
   },
@@ -69,7 +69,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'inprogress',
     year: 2022,
-    rating: 3,
+    score: 3,
     area: 'Architecture',
     program: 'Internship'
   },
@@ -81,7 +81,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'planning',
     year: 2021,
-    rating: 4,
+    score: 4,
     area: 'Music',
     program: 'Scholarship'
   },
@@ -93,7 +93,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'done',
     year: 2020,
-    rating: 2,
+    score: 2,
     area: 'Painting',
     program: 'Integration'
   },
@@ -105,7 +105,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'inprogress',
     year: 2019,
-    rating: 3,
+    score: 3,
     area: 'Poetry',
     program: 'Endorsement'
   },
@@ -117,7 +117,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'planning',
     year: 2023,
-    rating: 5,
+    score: 5,
     area: 'Cinema',
     program: 'Internship'
   },
@@ -129,7 +129,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'done',
     year: 2022,
-    rating: 1,
+    score: 1,
     area: 'Architecture',
     program: 'Scholarship'
   },
@@ -141,7 +141,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'inprogress',
     year: 2023,
-    rating: 4,
+    score: 4,
     area: 'Music',
     program: 'Endorsement'
   },
@@ -153,7 +153,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'planning',
     year: 2021,
-    rating: 3,
+    score: 3,
     area: 'Architecture',
     program: 'Internship'
   },
@@ -165,7 +165,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'done',
     year: 2020,
-    rating: 5,
+    score: 5,
     area: 'Painting',
     program: 'Scholarship'
   },
@@ -177,7 +177,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'inprogress',
     year: 2019,
-    rating: 2,
+    score: 2,
     area: 'Poetry',
     program: 'Integration'
   },
@@ -189,7 +189,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'planning',
     year: 2023,
-    rating: 1,
+    score: 1,
     area: 'Cinema',
     program: 'Endorsement'
   },
@@ -201,7 +201,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'done',
     year: 2022,
-    rating: 3,
+    score: 3,
     area: 'Music',
     program: 'Internship'
   },
@@ -213,7 +213,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'inprogress',
     year: 2021,
-    rating: 4,
+    score: 4,
     area: 'Architecture',
     program: 'Scholarship'
   },
@@ -225,7 +225,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'planning',
     year: 2020,
-    rating: 2,
+    score: 2,
     area: 'Painting',
     program: 'Integration'
   },
@@ -237,7 +237,7 @@ const projects: IProject[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     status: 'done',
     year: 2019,
-    rating: 3,
+    score: 3,
     area: 'Poetry',
     program: 'Endorsement'
   }

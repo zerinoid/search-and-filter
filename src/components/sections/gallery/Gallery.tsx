@@ -1,7 +1,7 @@
 import Image, { ImageLoaderProps } from 'next/image';
 import styles from './Gallery.module.css';
 
-export type statuses = 'done' | 'planning' | 'inprogress';
+type statuses = 'done' | 'planning' | 'inprogress';
 type areas = 'Architecture' | 'Music' | 'Painting' | 'Poetry' | 'Cinema';
 type programs = 'Endorsement' | 'Internship' | 'Scholarship' | 'Integration';
 
@@ -13,7 +13,7 @@ export interface IProject {
   description: string;
   status: statuses;
   year: number;
-  rating: 1 | 2 | 3 | 4 | 5;
+  score: 1 | 2 | 3 | 4 | 5;
   area: areas;
   program: programs;
 }

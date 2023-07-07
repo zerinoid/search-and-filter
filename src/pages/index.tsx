@@ -57,7 +57,7 @@ const Home: NextPageWithLayout = () => {
     }
     if (
       filters.enterprise.size > 0 &&
-      !filters.enterprise.has(project.rating)
+      !filters.enterprise.has(project.score)
     ) {
       return false;
     }
