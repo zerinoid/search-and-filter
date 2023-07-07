@@ -5,7 +5,7 @@ import { NextPageWithLayout } from './_app';
 import Filter from '../components/sections/filter/Filter';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faBars, faEye } from '@fortawesome/free-solid-svg-icons';
 import { galleryData } from '@/components/sections/gallery/Gallery.data';
 
 const Home: NextPageWithLayout = () => {
@@ -81,13 +81,18 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <div className={styles.header}>
-        <button
-          className="md:hidden"
-          onClick={() => setIsFilterOpen(isOpen => !isOpen)}
-        >
-          <FontAwesomeIcon icon={faBars} size="xl" />
-        </button>
-        <p>Search and filter</p>
+        <div className="flex md:hidden">
+          <button onClick={() => setIsFilterOpen(isOpen => !isOpen)}>
+            <FontAwesomeIcon icon={faBars} size="xl" />
+          </button>
+        </div>
+        <div className="text-center flex items-center md:flex-grow">
+          <p className="sm:hidden">SNF</p>
+          <p className="hidden sm:block">Search and filter</p>
+        </div>
+        <div>
+          <FontAwesomeIcon icon={faEye} size="xl" />
+        </div>
       </div>
       <div
         className={styles.slidingMenu}
