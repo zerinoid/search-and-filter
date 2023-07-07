@@ -4,7 +4,6 @@ import CheckboxToggle from '@/components/inputs/checkbox-toggle/CheckboxToggle';
 import { filterData } from './Filter.data';
 
 export interface IFilter {
-  isOpen: boolean;
   searchText: string;
   handleSearchTextChange: (text: string) => void;
   handleCheckboxChange: (
@@ -16,7 +15,6 @@ export interface IFilter {
 }
 
 const Filter: React.FC<IFilter> = ({
-  isOpen,
   searchText,
   handleSearchTextChange,
   handleCheckboxChange,
@@ -24,7 +22,7 @@ const Filter: React.FC<IFilter> = ({
 }) => {
   const filters = filterData.base;
   return (
-    <div className={styles.container} style={{ left: isOpen ? '0' : '-100%' }}>
+    <div className={styles.container}>
       <div className={styles.input}>
         <SearchBox value={searchText} onChange={handleSearchTextChange} />
       </div>

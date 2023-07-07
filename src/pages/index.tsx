@@ -55,10 +55,7 @@ const Home: NextPageWithLayout = () => {
     ) {
       return false;
     }
-    if (
-      filters.enterprise.size > 0 &&
-      !filters.enterprise.has(project.score)
-    ) {
+    if (filters.enterprise.size > 0 && !filters.enterprise.has(project.score)) {
       return false;
     }
     if (filters.area.size > 0 && !filters.area.has(project.area)) {
@@ -84,13 +81,17 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <>
-      <Filter
-        isOpen={isFilterOpen}
-        searchText={searchText}
-        handleSearchTextChange={handleSearchTextChange}
-        handleCheckboxChange={handleCheckboxChange}
-        filtersState={filters}
-      />
+      <div
+        className={styles.slidingMenu}
+        style={{ left: isFilterOpen ? '0' : '-100%' }}
+      >
+        <Filter
+          searchText={searchText}
+          handleSearchTextChange={handleSearchTextChange}
+          handleCheckboxChange={handleCheckboxChange}
+          filtersState={filters}
+        />
+      </div>
       <section className={styles.main}>
         <button
           className="fixed top-2 left-2 z-10 md:hidden"
