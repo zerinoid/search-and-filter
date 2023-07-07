@@ -18,7 +18,6 @@ const Home: NextPageWithLayout = () => {
   });
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const [searchText, setSearchText] = useState<string>('');
-  const icon = isFilterOpen ? faXmark : faBars;
   const projects = galleryData.projects;
 
   const handleSearchTextChange = (text: string) => {
@@ -81,10 +80,25 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <>
+      <div className={styles.header}>
+        <button
+          className="md:hidden"
+          onClick={() => setIsFilterOpen(isOpen => !isOpen)}
+        >
+          <FontAwesomeIcon icon={faBars} size="xl" />
+        </button>
+        <p>Search and filter</p>
+      </div>
       <div
         className={styles.slidingMenu}
         style={{ left: isFilterOpen ? '0' : '-100%' }}
       >
+        <button
+          className="absolute top-2 right-2"
+          onClick={() => setIsFilterOpen(isOpen => !isOpen)}
+        >
+          <FontAwesomeIcon icon={faXmark} size="xl" />
+        </button>
         <Filter
           searchText={searchText}
           handleSearchTextChange={handleSearchTextChange}
@@ -92,21 +106,17 @@ const Home: NextPageWithLayout = () => {
           filtersState={filters}
         />
       </div>
-      <section className={styles.container}>
-        <button
-          className="fixed top-2 left-2 z-10 md:hidden"
-          onClick={() => setIsFilterOpen(isOpen => !isOpen)}
-        >
-          <FontAwesomeIcon icon={icon} size="xl" />
-        </button>
+      <section className={styles.main}>
         <Gallery projects={filteredItems} />
         <div className={styles.fixedMenu}>
-          <Filter
-            searchText={searchText}
-            handleSearchTextChange={handleSearchTextChange}
-            handleCheckboxChange={handleCheckboxChange}
-            filtersState={filters}
-          />
+          <div className={styles.fixedContainer}>
+            <Filter
+              searchText={searchText}
+              handleSearchTextChange={handleSearchTextChange}
+              handleCheckboxChange={handleCheckboxChange}
+              filtersState={filters}
+            />
+          </div>
         </div>
       </section>
     </>

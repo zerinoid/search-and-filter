@@ -1,8 +1,23 @@
-.container {
+.header {
+  position: sticky;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  top: 0;
+  height: 40px;
+  border-bottom: 1px solid grey;
+  background-color: white;
+  z-index: 200;
+}
+
+.header p {
+  text-transform: uppercase;
+}
+
+.main {
   display: grid;
   grid-template-columns: 1fr;
   min-height: 100vh;
-  padding: 4rem 0;
 
   @media screen(md) {
     grid-template-columns: 8fr 4fr;
@@ -16,6 +31,7 @@
   left: -100%;
   overflow-y: auto;
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 300;
 
   @media screen(md) {
     display: none;
@@ -24,10 +40,17 @@
 
 .fixedMenu {
   display: none;
+  border-left: 1px solid grey;
+  z-index: 100;
 
   @media screen(md) {
     display: block;
   }
+}
+
+.fixedContainer {
+  top: 40px;
+  position: sticky;
 }
 
 @media (prefers-color-scheme: dark) {
