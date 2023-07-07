@@ -1,6 +1,4 @@
-import Link from 'next/link';
 import styles from './Filter.module.css';
-import { SetStateAction, Dispatch } from 'react';
 import SearchBox from '@/components/inputs/search-box/SearchBox';
 import CheckboxToggle from '@/components/inputs/checkbox-toggle/CheckboxToggle';
 import { filterData } from './Filter.data';
