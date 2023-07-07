@@ -92,15 +92,22 @@ const Home: NextPageWithLayout = () => {
           filtersState={filters}
         />
       </div>
-      <section className={styles.main}>
+      <section className={styles.container}>
         <button
           className="fixed top-2 left-2 z-10 md:hidden"
           onClick={() => setIsFilterOpen(isOpen => !isOpen)}
         >
           <FontAwesomeIcon icon={icon} size="xl" />
         </button>
-        <h1 className={styles.title}>Search and Filter</h1>
         <Gallery projects={filteredItems} />
+        <div className={styles.fixedMenu}>
+          <Filter
+            searchText={searchText}
+            handleSearchTextChange={handleSearchTextChange}
+            handleCheckboxChange={handleCheckboxChange}
+            filtersState={filters}
+          />
+        </div>
       </section>
     </>
   );
