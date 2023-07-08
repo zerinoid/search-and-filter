@@ -13,7 +13,7 @@ const SearchBox: React.FC<ISearchBox> = ({ value, onChange }) => {
   return (
     <div className={styles.container}>
       <input
-        type="text"
+        type="search"
         value={value}
         onChange={handleChange}
         placeholder="Search by name"

@@ -99,7 +99,7 @@ const Home: NextPageWithLayout = () => {
         style={{ left: isFilterOpen ? '0' : '-100%' }}
       >
         <button
-          className="absolute top-2 right-2"
+          className={styles.closeSliding}
           onClick={() => setIsFilterOpen(isOpen => !isOpen)}
         >
           <FontAwesomeIcon icon={faXmark} size="xl" />

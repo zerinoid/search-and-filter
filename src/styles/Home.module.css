@@ -43,6 +43,7 @@
 }
 
 .slidingMenu {
+  background-color: white;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -50,10 +51,21 @@
   overflow-y: auto;
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 300;
+  border-right: 1px solid gray;
 
   @media screen(md) {
     display: none;
   }
+}
+
+.closeSliding {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding-right: 10px;
+  align-items: center;
+  height: 40px;
+  border-bottom: 1px solid gray;
 }
 
 .fixedMenu {
