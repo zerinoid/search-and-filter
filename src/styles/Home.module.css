@@ -7,7 +7,7 @@
   align-items: center;
   top: 0;
   height: 40px;
-  border-bottom: 1px solid grey;
+  border-bottom: var(--border-style);
   background-color: white;
   z-index: 200;
 }
@@ -20,12 +20,12 @@
 }
 
 .header div:first-child {
-  border-right: 1px solid gray;
+  border-right: var(--border-style);
 }
 
 .header div:last-child {
   display: flex;
-  border-left: 1px solid gray;
+  border-left: var(--border-style);
 }
 
 .header p {
@@ -51,7 +51,7 @@
   overflow-y: auto;
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 300;
-  border-right: 1px solid gray;
+  border-right: var(--border-style);
 
   @media screen(md) {
     display: none;
@@ -65,12 +65,12 @@
   padding-right: 10px;
   align-items: center;
   height: 40px;
-  border-bottom: 1px solid gray;
+  border-bottom: var(--border-style);
 }
 
 .fixedMenu {
   display: none;
-  border-left: 1px solid grey;
+  border-left: var(--border-style);
   z-index: 100;
 
   @media screen(md) {
