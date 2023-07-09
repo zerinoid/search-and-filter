@@ -3,7 +3,7 @@
   width: 250px;
   flex-direction: column;
   background-color: #fafafa;
-  font-size: 14px;
+  font-size: 12px;
 
   @media screen(md) {
     width: 100%;
@@ -23,5 +23,11 @@
     padding-bottom: 7px;
     border-bottom: var(--border-style);
     display: grid;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: #222;
   }
 }

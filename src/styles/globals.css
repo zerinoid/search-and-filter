@@ -24,12 +24,20 @@ a {
   outline: none;
 }
 
-/* @media (prefers-color-scheme: dark) { */
-/*   html { */
-/*     color-scheme: dark; */
-/*   } */
-/*   body { */
-/*     color: white; */
-/*     background: black; */
-/*   } */
-/* } */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border-style: 1px solid #a6a6a6;
+  }
+
+}

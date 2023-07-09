@@ -12,3 +12,9 @@
   font-weight: 400;
   margin-bottom: 5px;
 }
+
+@media (prefers-color-scheme: dark) {
+  .container img {
+    filter: invert(1);
+  }
+}

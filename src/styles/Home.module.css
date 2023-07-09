@@ -103,13 +103,9 @@
 
 @media (prefers-color-scheme: dark) {
 
-  .card,
-  .footer {
-    border-color: #222;
-  }
-
-  .code {
-    background: #111;
+  .header,
+  .slidingMenu {
+    background-color: #222;
   }
 
   .logo img {
