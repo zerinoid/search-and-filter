@@ -3,8 +3,25 @@
   width: 250px;
   flex-direction: column;
   background-color: #fafafa;
+  font-size: 14px;
 
   @media screen(md) {
     width: 100%;
+  }
+}
+
+.filterGroup {
+  padding-top: 5px;
+  padding-left: 18px;
+  font-size: 12px;
+}
+
+.grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media screen(md) {
+    padding-bottom: 7px;
+    border-bottom: var(--border-style);
+    display: grid;
   }
 }

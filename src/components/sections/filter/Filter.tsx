@@ -28,22 +28,26 @@ const Filter: React.FC<IFilter> = ({
       </div>
       {filters.map(filterGroup => (
         <div key={filterGroup.groupName}>
-          <p>{filterGroup.groupName}</p>
-          {filterGroup.filters.map(filter => (
-            <CheckboxToggle
-              key={filter.value + 'a'}
-              value={filter.value}
-              label={filter.label}
-              checked={filtersState[filterGroup.groupName].has(filter.value)}
-              onChange={checked =>
-                handleCheckboxChange(
-                  filterGroup.groupName,
-                  filter.value,
-                  checked
-                )
-              }
-            />
-          ))}
+          <div className={styles.filterGroup}>
+            <p>{'Filter by ' + filterGroup.groupName}</p>
+          </div>
+          <div className={styles.grid}>
+            {filterGroup.filters.map(filter => (
+              <CheckboxToggle
+                key={filter.value + 'a'}
+                value={filter.value}
+                label={filter.label}
+                checked={filtersState[filterGroup.groupName].has(filter.value)}
+                onChange={checked =>
+                  handleCheckboxChange(
+                    filterGroup.groupName,
+                    filter.value,
+                    checked
+                  )
+                }
+              />
+            ))}
+          </div>
         </div>
       ))}
     </div>
