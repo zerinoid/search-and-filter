@@ -1,0 +1,14 @@
+.container {
+  max-width: 400px;
+}
+
+.container h2 {
+  margin-bottom: 0.5rem;
+}
+
+.container p {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}

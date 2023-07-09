@@ -1,4 +1,4 @@
-import { IProject } from './Gallery';
+import { IProject } from '../../cards/project/CardProject';
 
 const projects: IProject[] = [
   {
