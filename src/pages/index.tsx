@@ -11,7 +11,7 @@ import { galleryData } from '@/components/sections/gallery/Gallery.data';
 const Home: NextPageWithLayout = () => {
   const [filters, setFilters] = useState<Record<string, Set<string | number>>>({
     status: new Set(),
-    approvalYear: new Set(),
+    year: new Set(),
     score: new Set(),
     area: new Set(),
     program: new Set()
@@ -48,10 +48,7 @@ const Home: NextPageWithLayout = () => {
     if (filters.status.size > 0 && !filters.status.has(project.status)) {
       return false;
     }
-    if (
-      filters.approvalYear.size > 0 &&
-      !filters.approvalYear.has(project.year)
-    ) {
+    if (filters.year.size > 0 && !filters.year.has(project.year)) {
       return false;
     }
     if (filters.score.size > 0 && !filters.score.has(project.score)) {
