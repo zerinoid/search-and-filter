@@ -20,14 +20,14 @@ const CheckboxToggle: React.FC<ICheckboxToggle> = ({
   return (
     <div className={styles.container}>
       <input
-        id={value}
+        id={String(value)}
         className={styles.input}
         type="checkbox"
         checked={checked}
         onChange={handleChange}
         value={value}
       />
-      <label htmlFor={value} className={styles.label}>
+      <label htmlFor={String(value)} className={styles.label}>
         {label}
       </label>
     </div>
