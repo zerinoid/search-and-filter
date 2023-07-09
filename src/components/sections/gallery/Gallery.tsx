@@ -4,6 +4,7 @@ import styles from './Gallery.module.css';
 type statuses = 'done' | 'planning' | 'inprogress';
 type areas = 'Architecture' | 'Music' | 'Painting' | 'Poetry' | 'Cinema';
 type programs = 'Endorsement' | 'Internship' | 'Scholarship' | 'Integration';
+type scores = 1 | 2 | 3 | 4 | 5;
 
 export interface IProject {
   id: number;
@@ -13,7 +14,7 @@ export interface IProject {
   description: string;
   status: statuses;
   year: number;
-  score: 1 | 2 | 3 | 4 | 5;
+  score: scores;
   area: areas;
   program: programs;
 }

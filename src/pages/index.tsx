@@ -12,7 +12,7 @@ const Home: NextPageWithLayout = () => {
   const [filters, setFilters] = useState<Record<string, Set<string | number>>>({
     status: new Set(),
     approvalYear: new Set(),
-    enterprise: new Set(),
+    score: new Set(),
     area: new Set(),
     program: new Set()
   });
@@ -54,7 +54,7 @@ const Home: NextPageWithLayout = () => {
     ) {
       return false;
     }
-    if (filters.enterprise.size > 0 && !filters.enterprise.has(project.score)) {
+    if (filters.score.size > 0 && !filters.score.has(project.score)) {
       return false;
     }
     if (filters.area.size > 0 && !filters.area.has(project.area)) {

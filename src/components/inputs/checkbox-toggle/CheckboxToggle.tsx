@@ -3,7 +3,7 @@ import styles from './CheckboxToggle.module.scss';
 export interface ICheckboxToggle {
   label: string;
   checked: boolean;
-  value: string;
+  value: string | number;
   onChange: (checked: boolean) => void;
 }
 

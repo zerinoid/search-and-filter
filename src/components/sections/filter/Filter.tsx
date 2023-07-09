@@ -8,7 +8,7 @@ export interface IFilter {
   handleSearchTextChange: (text: string) => void;
   handleCheckboxChange: (
     filterName: string,
-    value: string,
+    value: string | number,
     checked: boolean
   ) => void;
   filtersState: Record<string, Set<string | number>>;
@@ -31,7 +31,7 @@ const Filter: React.FC<IFilter> = ({
           <p>{filterGroup.groupName}</p>
           {filterGroup.filters.map(filter => (
             <CheckboxToggle
-              key={filter.value}
+              key={filter.value + 'a'}
               value={filter.value}
               label={filter.label}
               checked={filtersState[filterGroup.groupName].has(filter.value)}
