@@ -1,13 +1,11 @@
 ## Getting Started
 
-App template for layout, architecture and component library testing
+Example of a simple cumulative search algorithm which filters elements by fixed categories and by text input, over selected properties.
 
+Used: React, NextJs, TypeScript, Set Object, Prop Drilling, CSS Modules, Sass, Husky.
+
+After cloning:
 ```bash
+npm i
 npm run dev
-# or
-yarn dev
 ```
-
-## Inspirações:
-
-[How to build scalable architecture](https://dev.to/alexeagleson/how-to-build-scalable-architecture-for-your-nextjs-project-2pb7)

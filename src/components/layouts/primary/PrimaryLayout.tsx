@@ -38,6 +38,16 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         <title>{title}</title>
       </Head>
       <main className={`${styles.main} ${inter.className}`}>{children}</main>
+      <footer className={styles.footer}>
+        <p>
+          Example of a simple cumulative search algorithm which filters elements
+          by fixed categories and by text input, over selected properties.
+        </p>
+        <p>
+          Employed concepts and techs: React, NextJs, TypeScript, Regex ,Set
+          Object, Prop Drilling, CSS Modules, Sass, Husky.
+        </p>
+      </footer>
     </>
   );
 };
