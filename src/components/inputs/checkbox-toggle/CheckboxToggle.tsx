@@ -1,4 +1,4 @@
-import styles from './CheckboxToggle.module.css';
+import styles from './CheckboxToggle.module.scss';
 
 export interface ICheckboxToggle {
   label: string;
@@ -19,13 +19,15 @@ const CheckboxToggle: React.FC<ICheckboxToggle> = ({
 
   return (
     <div className={styles.container}>
-      <label>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={handleChange}
-          value={value}
-        />
+      <input
+        id={value}
+        className={styles.input}
+        type="checkbox"
+        checked={checked}
+        onChange={handleChange}
+        value={value}
+      />
+      <label htmlFor={value} className={styles.label}>
         {label}
       </label>
     </div>
