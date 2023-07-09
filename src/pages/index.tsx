@@ -3,7 +3,7 @@ import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import styles from '../styles/Home.module.css';
 import { NextPageWithLayout } from './_app';
 import Filter from '../components/sections/filter/Filter';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faBars, faEye } from '@fortawesome/free-solid-svg-icons';
 import { galleryData } from '@/components/sections/gallery/Gallery.data';
@@ -18,6 +18,17 @@ const Home: NextPageWithLayout = () => {
   });
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const [searchText, setSearchText] = useState<string>('');
+  const [showClearButton, setShowClearButton] = useState<boolean>(false);
+
+  useEffect(() => {
+    const isFilterActive = Object.values(filters).some(set => set.size > 0);
+    if (isFilterActive) {
+      setShowClearButton(true);
+    } else {
+      setShowClearButton(false);
+    }
+  }, [filters]);
+
   const projects = galleryData.projects;
 
   const handleSearchTextChange = (text: string) => {
@@ -75,8 +86,38 @@ const Home: NextPageWithLayout = () => {
     return true;
   });
 
+  const clearFilter = (): void => {
+    setFilters({
+      status: new Set(),
+      year: new Set(),
+      score: new Set(),
+      area: new Set(),
+      program: new Set()
+    });
+  };
+
+  const clearIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="50"
+      height="50"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fill="#dd3333"
+        d="M10 0a10 10 0 1 0 10 10A10 10 0 0 0 10 0zm5.66 14.24l-1.41 1.41L10 11.41l-4.24 4.25-1.42-1.42L8.59 10 4.34 5.76l1.42-1.42L10 8.59l4.24-4.24 1.41 1.41L11.41 10z"
+      />
+    </svg>
+  );
+
   return (
     <>
+      {showClearButton && (
+        <button className={styles.clearButton} onClick={clearFilter}>
+          {clearIcon}
+          Clear filters
+        </button>
+      )}
       <div className={styles.header}>
         <div className="flex md:hidden">
           <button onClick={() => setIsFilterOpen(isOpen => !isOpen)}>
