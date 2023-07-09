@@ -16,7 +16,7 @@ const SearchBox: React.FC<ISearchBox> = ({ value, onChange }) => {
         type="search"
         value={value}
         onChange={handleChange}
-        placeholder="Search by name"
+        placeholder="Search by title, name or description"
       />
     </div>
   );
